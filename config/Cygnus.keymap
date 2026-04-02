@@ -15,7 +15,19 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        kakko1 {
+            bindings = <&kp LA(NUMBER_9)>;
+            key-positions = <42 9>;
+        };
+
+        kakko2 {
+            bindings = <&kp LA(NUMBER_0)>;
+            key-positions = <42 10>;
+        };
+    };
 
     behaviors {
         ROTATE: ROTATE {
