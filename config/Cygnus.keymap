@@ -35,6 +35,20 @@
             bindings = <&kp O &kp R &kp A &kp O &kp R &kp A &kp O &kp R &kp A &kp O &kp R &kp A &kp NUMBER_4 &kp ENTER>;
             label = "NEW_MACRO";
         };
+
+        Mac_zoomin: zoom {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &msc SCRL_DOWN &kt LEFT_GUI>;
+            label = "ZOOM";
+        };
+
+        Mac_zoomout: Mac_zoomout {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &msc SCRL_UP &kt LEFT_GUI>;
+            label = "MAC_ZOOMOUT";
+        };
     };
 
     keymap {
@@ -53,8 +67,8 @@
 
         MAC_CTRL {
             bindings = <
-&trans  &trans     &trans          &kp LC(E)   &trans     &trans                            &trans          &kp LC(LEFT_ARROW)  &kp LC(RIGHT)  &trans     &kp UP_ARROW       &trans
-&trans  &kp LC(A)  &msc SCRL_DOWN  &kp DELETE  &kp RIGHT  &trans          &trans    &trans  &kp BACKSPACE   &kp LC(J)           &kp LC(K)      &kp LC(L)  &kp LC(SEMICOLON)  &trans
+&trans  &trans     &trans          &kp LC(E)   &trans     &Mac_zoomin                       &trans          &kp LC(LEFT_ARROW)  &kp LC(RIGHT)  &trans     &kp UP_ARROW       &trans
+&trans  &kp LC(A)  &msc SCRL_DOWN  &kp DELETE  &kp RIGHT  &Mac_zoomout    &trans    &trans  &kp BACKSPACE   &kp LC(J)           &kp LC(K)      &kp LC(L)  &kp LC(SEMICOLON)  &trans
 &trans  &trans     &msc SCRL_UP    &trans      &trans     &kp LEFT_ARROW  &trans    &trans  &kp DOWN_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &trans     &trans             &trans
 &trans  &trans     &trans          &trans      &trans     &trans          &trans    &trans  &trans                                                        &trans             &trans
             >;
@@ -93,11 +107,13 @@
 
         SCROLL {
             bindings = <
-&kp GRAVE      &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                                &kp LS(NUMBER_6)  &kp LS(NUMBER_7)   &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(NUMBER_0)  &kp ESCAPE
-&kp LS(GRAVE)  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)  &trans        &new_macro      &kp LS(NUMBER_6)  &kp C_AC_BACK      &kp C_PLAY_PAUSE  &kp C_NEXT        &kp LS(NUMBER_0)  &kp LS(MINUS)
-&trans         &trans            &trans            &trans            &trans            &trans            &trans        &trans          &trans            &kp C_VOLUME_DOWN  &kp C_VOL_UP      &kp K_MUTE        &trans            &trans
-&bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &trans            &trans            &bt BT_CLR    &kp LANGUAGE_1  &kp LANGUAGE_2                                                           &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp GRAVE      &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                                      &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(NUMBER_0)  &kp ESCAPE
+&kp LS(GRAVE)  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)  &kp C_PLAY_PAUSE    &new_macro      &kp LS(NUMBER_6)  &kp C_PREVIOUS    &kp C_PLAY_PAUSE  &kp C_NEXT        &kp LS(NUMBER_0)  &kp LS(MINUS)
+&trans         &trans            &trans            &trans            &kp C_PREV        &kp C_NEXT        &kp K_MUTE          &trans          &trans            &trans            &trans            &trans            &trans            &trans
+&bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &trans            &trans            &bt BT_CLR          &kp LANGUAGE_1  &kp LANGUAGE_2                                                          &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
