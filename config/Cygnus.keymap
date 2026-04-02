@@ -15,14 +15,7 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         new_macro: new_macro {
@@ -79,7 +72,7 @@
         Mouse {
             bindings = <
 &trans  &kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                         &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8    &kp NUMBER_9     &kp NUMBER_0   &trans
-&trans  &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))    &trans  &trans            &mkp MB1           &mkp MB2        &kp DOLLAR       &kp PERCENT    &trans
+&trans  &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))    &trans  &trans            &mkp MB1           &mkp MB2        &trans           &kp PERCENT    &trans
 &trans  &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BACKSLASH  &trans
 &trans  &trans                      &trans           &trans           &trans           &trans        &trans                     &trans  &trans                                                                &kp PIPE       &trans
             >;
