@@ -80,7 +80,7 @@
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
 
-        MOUSE {
+        MOUSE_LAYER {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
