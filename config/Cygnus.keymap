@@ -69,12 +69,12 @@
         MAC {
             bindings = <
 &kp TAB       &kp Q             &kp W     &kp E             &kp R  &kp T                                           &kp Y      &kp U  &kp I      &kp O    &kp P                      &kp MINUS
-&mo 1         &kp A             &kp S     &kp D             &kp F  &kp G     &kp LC(UP_ARROW)    &kp SINGLE_QUOTE  &kp H      &kp J  &kp K      &kp L    &kp SEMICOLON              &lt 2 ENTER
+&mo 1         &kp A             &kp S     &kp D             &kp F  &kp G     &kp LC(UP_ARROW)    &kp SINGLE_QUOTE  &kp H      &kp J  &kp K      &kp L    &kp SEMICOLON              &lt 4 ENTER
 &kp LSHFT     &kp Z             &kp X     &kp C             &kp V  &kp B     &kp EQUAL           &kp BACKSPACE     &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH                   &kp RSHFT
-&kp CAPSLOCK  &kp LEFT_CONTROL  &kp LALT  &kp LEFT_COMMAND  &mo 5  &mkp MB1  &mkp MB2            &mo 5             &kp SPACE                             &mt LEFT_GUI LEFT_BRACKET  &mt RCTRL RIGHT_BRACKET
+&kp CAPSLOCK  &kp LEFT_CONTROL  &kp LALT  &kp LEFT_COMMAND  &mo 6  &mkp MB1  &mkp MB2            &mo 6             &kp SPACE                             &mt LEFT_GUI LEFT_BRACKET  &mt RCTRL RIGHT_BRACKET
             >;
 
-            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&inc_dec_kp LG(GRAVE) LS(LG(GRAVE))>;
         };
 
         MAC_CTRL {
@@ -85,7 +85,29 @@
 &trans  &trans     &trans          &trans      &trans     &trans          &trans                  &trans  &trans                                                                   &trans             &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LA(LG(RIGHT)) LG(LA(LEFT))>;
+            sensor-bindings = <&inc_dec_kp LG(TAB) LG(LS(TAB))>;
+        };
+
+        Android {
+            bindings = <
+&kp TAB    &kp Q         &kp W     &kp E      &kp R  &kp T                             &kp Y      &kp U  &kp I      &kp O    &kp P               &kp MINUS
+&kp A      &kp A         &kp S     &kp D      &kp F  &kp G      &kp LCTRL    &kp SQT   &kp H      &kp J  &kp K      &kp L    &kp SEMI            &lt 4 ENTER
+&kp LSHFT  &kp Z         &kp X     &kp C      &kp V  &kp B      &kp EQUAL    &kp BSPC  &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH            &kp RSHFT
+&trans     &kp LEFT_GUI  &kp LALT  &kp LCTRL  &mo 6  &mkp LCLK  &mkp RCLK    &mo 6     &kp SPACE                             &mt RCTRL LC(LBKT)  &mt RIGHT_GUI LC(RBKT)
+            >;
+
+            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+        };
+
+        Android_Ctrl {
+            bindings = <
+&trans  &trans    &trans          &kp END     &trans     &trans                            &trans          &trans              &trans         &kp LA(RS(UP_ARROW))    &kp UP_ARROW  &trans
+&trans  &kp HOME  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &trans          &trans    &trans  &kp BACKSPACE   &kp F6              &kp F7         &kp F10                 &kp F11       &trans
+&trans  &trans    &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW  &trans    &trans  &kp DOWN_ARROW  &kp LA(LEFT_ARROW)  &kp LA(RIGHT)  &kp LS(LA(DOWN_ARROW))  &trans        &trans
+&trans  &trans    &trans          &trans      &trans     &trans          &trans    &trans  &trans                                                                     &trans        &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp LA(TAB) LA(LS(RS(TAB)))>;
         };
 
         MOUSE {
@@ -95,17 +117,6 @@
 &trans        &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL     &trans  &trans        &trans        &trans        &trans        &trans        &trans
 &bt BT_SEL 0  &bt BT_SEL 1                &bt BT_SEL 2     &bt BT_SEL 3     &trans           &trans        &trans        &trans  &trans                                                  &trans        &trans
             >;
-        };
-
-        ARROW {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans  &trans
-            >;
-
-            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
 
         MOUSE_LAYER {
