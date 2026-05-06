@@ -101,8 +101,8 @@
         MAC_CTRL {
             bindings = <
 &trans  &trans     &trans          &kp LC(E)   &trans     &Mac_zoomin                                     &trans          &kp LC(LEFT_ARROW)  &kp LC(RIGHT)  &kp LS(LC(UP_ARROW))  &kp UP_ARROW       &trans
-&trans  &kp LC(A)  &msc SCRL_DOWN  &kp DELETE  &kp RIGHT  &Mac_zoomout    &kp LG(LS(NUMBER_4))    &trans  &kp BACKSPACE   &kp LC(J)           &kp LC(K)      &kp LC(L)             &kp LC(SEMICOLON)  &trans
-&trans  &trans     &msc SCRL_UP    &trans      &trans     &kp LEFT_ARROW  &trans                  &trans  &kp DOWN_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &kp LS(LC(DOWN))      &trans             &trans
+&trans  &kp LC(A)  &msc SCRL_UP    &kp DELETE  &kp RIGHT  &Mac_zoomout    &kp LG(LS(NUMBER_4))    &trans  &kp BACKSPACE   &kp LC(J)           &kp LC(K)      &kp LC(L)             &kp LC(SEMICOLON)  &trans
+&trans  &trans     &msc SCRL_DOWN  &trans      &trans     &kp LEFT_ARROW  &trans                  &trans  &kp DOWN_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &kp LS(LC(DOWN))      &trans             &trans
 &trans  &trans     &trans          &trans      &trans     &trans          &trans                  &trans  &trans                                                                   &trans             &trans
             >;
 
